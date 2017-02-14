@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="pm:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/pm_war</output-path>
+    <root id="archive" name="pm_war.war">
+      <element id="artifact" artifact-name="pm:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql-connector-java-5.0.6-bin" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
