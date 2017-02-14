@@ -1,0 +1,89 @@
+country - add ??
+currency - add ?? usd /amd
+priority - 3 types, lcp
+types -dynamic
+
+1)UserFilter ev AdminFilter-i mijocov(  Filter) arandznacvac e 2 profilner, ev paymanavorvac tesakic,amen meky uni irhasaneliutyuny
+
+2)Initializer -y e ogtagorcvac erb 1-in angam e run linum , stugum e asdmi ka te 4e ete 4ka avalacnum e
+( ServletContextListener)
+
+3) session.invalidate(); -i mijocov maqrum e session-i
+4)psv-nery encode en linum SHAHashEnrypt-ov
+5) projecty asxactum e MVC-ov(model view controller),
+
+ view-jsp
+ model-datacccess
+ controller -conrollers
+
+vortex vor servletnei ekac information yndunum e controler packagi classnery,
+apa poxancum dataaccess, dataccesum servicenrn en , voronq vor patasxanatu en  bissness logikayi hamar,
+@Override
+    public List<ProductDetail> getByParams(Map<String, Object> params) throws InternalErrorException {
+        try {
+            List<ProductDetail> details = detailDao.getByParams(params);
+            for (ProductDetail detail : details) {
+                int productId = detail.getProductId();
+                int typeId = detail.getTypeId();
+                int categoryId = detail.getCategoryId();
+
+                Product product = productDao.getById(productId);
+                ProductType productType = productTypeDao.getById(typeId);
+                ProductCategory productCategory = categoryDao.getById(categoryId);
+
+                detail.setProduct(product);
+                detail.setType(productType);
+                detail.setCategory(productCategory);
+
+            }
+            return details;
+        } catch (DatabaseException e) {
+            throw new InternalErrorException(e);
+        }
+    }
+
+service-managernern(bisnnne objectner ProductCategoryManagerImpl= ProductCategoryBOImpl ysenc el en grum , ogtagorcum) kancum en
+dao-ner (data access objecner, voronq vor patasxanatu en db-i het asxatelu  hamar)
+dataaccess -datamanager layernerum, abstractia e entarkvac iterfacnerum grvac en methodnery, voronq vor hetagayum, zargacman depqum kareli e katarrelagorcel
+orinak vax  uzum en daoImpl(implementation)-y poxenq ev ogtagorcenq, Mssql,oracle, kam mi urish db uxaki poxum en impl-nery grum norery ev ogtagorcum dranq
+orinak
+ surveyDao = new SurveyDaoImpl();s karox e daarnal  surveyDao = new SurveyDaoMSImpl();;
+  surveyDao = new SurveyDaoOracleImpl();,
+  nuynisk  surveyDao = new SurveyDaoNoSqlImpl();, u arden implemntationy poxenq
+
+  3, layeerum bolor pager-y gtnvum e WEB-INF-um da arvel e vor drsic visibility 4unenan, orinak domainname(bank.am)/login.jsp grelu depum kerevar
+  isk domainname(bank.am)/WEB-INF/login.jsp 4i ereva vorovhetev tomcaty 4i toxnum,
+  3.2 servletnern declar en rvac web.xml-ov ev ogtagrcvac e admin/* ev user/*(sranc von ei asum 4em hishum) vornq vor nunn anunov actiony
+  tarberakum en adminnn e cuyc talu te useriny
+  jsp-nerum ogtagorcvum en constantner voornq vor ugtagorvum en jasperneri mijocon<%=Constant.PUBLISHED_AT%>
+  <%%>; <%=%> sranq ko4um en jasperner, orinakner shat enq ogtagorcel, mi erku orinak kgres
+ <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+ et norvany kkardas, orinakner projecti mej kan ,
+ jspnerum karox enq ogtagorcel nayev tagliber, mer haytararac tagery, uxaki dra nahrajestutuny 4i exel 4em grel
+ harcerkan Artur jan????????????????????????
+
+ ete karelia mi hat karas ases survey-nerits konkret inch karelia @ndex grel ?karelin kaeli e iharke, uxaki 4em patkeracnum konkretinchakarox es cankcacn el gres,
+ petq e bayc ornakd lini dipuk u hamozic, de hents mer orinakaki vra vor batsatrem
+  kaorx es henc SigInController, SigUpController, SigOutController el gres
+  isk greluts chisht@ qo kartsiqov vontsa sax kod@ dnem u tox ar tox batsatrem te vonts en et depqerum anum ?
+  tes irar het vor xosum einq, estex yes orinakner greci, du karox es nuyn kerp anel, poqr masr gres, u heto havelvaci vra ases, manramasn tes havelvac12
+  kam havelvac sigin havelvac, hamarakales, kam hencanunov el dnes
+  haskatsa, hima hents web- masi batsatrutyunn em grum, desktopin@ arden inch vor chapov grel em motavorapes nuyn bannel hima web-i hamar piti anem
+
+  de shat shnorhakal em, hesa et Sqlyogi pah@ dzem eli ashxatatsnem vor mi qani hat screenshot anem
+  ok deqez hajoxutyun, qnutyund erb e
+  hulilisi skzbnerin, der petqa 40 ej tesakan hnarem grem ))
+  esqnn vor qaxaqavir dzevakeroes, orinakner dnes mi 80 klni :d
+  lav banes asum, hesa inchqan kod sax hertov ira orinaknerov karelia dnel, kak raz ejernel kdzven)
+  de sax kodaeli ))
+  immot areci menak 4 ej jasper enkaragrc
+  https://github.com/deanlandolt/persvr/blob/master/WEB-INF/web.xml.generic
+
+  karox es google anes dao, service, bo, manager, controller, mvc breovshat teorianer kan
+  shat lav xorhurd tvir, hesa kanem, esel mtatsum ei 40 ej inch piti lratsnem, bayc orinaknery projectic piti linen
+  ha, skzbum mi poqr tesakan mas kgrem heto kod u kodi batsatrutyun
+  de yes helnem bg
+  Mersi shat ! Baxnrdir em bari gisher !, bari gisher ap jan , myql 4moranas, ete 4es karoxana, nayei ete server installer unis, unistal aranor qic
+  che, et xndir@ tents mi tari araj eli er exel, hishum em vor googleov man eka gta, mi hat parz lutsum em
+  deyes hela
+  OK, de
